@@ -177,6 +177,7 @@ sphinx_gallery_conf = {
     "capture_repr": ("_repr_html_",),
     "within_subsection_order": "FileNameSortKey",
     "download_all_examples": False,
+    "remove_config_comments": True,
 }
 
 
