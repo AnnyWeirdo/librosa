@@ -798,9 +798,15 @@ class AdaptiveWaveplot:
         if label is not None:
             kwargs["label"] = label
         # This creates an invisible patch to contain the label
-        self.label_patch_ = mpatches.Rectangle(
-            (np.nan, np.nan), 0, 0, facecolor=self.steps.get_color(), **kwargs
-        )
+        if label is not None:
+            self.label_patch_ = mpatches.Rectangle(
+                (np.nan, np.nan), 0, 0, facecolor=self.steps.get_color(), 
+                label=label
+            )
+        else:
+            self.label_patch_ = mpatches.Rectangle(
+                (np.nan, np.nan), 0, 0, facecolor=self.steps.get_color()
+            )
 
     def __del__(self) -> None:
         """Disconnect callback methods on delete"""
